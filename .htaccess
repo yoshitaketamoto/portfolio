@@ -1,0 +1,22 @@
+<Files ~ "^\.(htaccess|htpasswd)$">
+deny from all
+</Files>
+RewriteEngine on
+RewriteCond %{HTTP_HOST} ^(www\.yoshitake-portfolio\.com)(:80)? [NC]
+RewriteRule ^(.*) https://yoshitake-portfolio.com/$1 [R=301,L]
+RewriteCond %{THE_REQUEST} ^.*/index.html
+RewriteRule ^(.*)index.html$ https://yoshitake-portfolio.com/$1 [R=301,L]
+RewriteCond %{THE_REQUEST} ^.*/work/
+RewriteRule ^(.*)work/$ https://yoshitake-portfolio.com/#work [NE,R=301,L]
+RewriteCond %{THE_REQUEST} ^.*/service/ 
+RewriteRule ^(.*)service/$ https://yoshitake-portfolio.com/#service [NE,R=301,L]
+RewriteCond %{THE_REQUEST} ^.*/about/
+RewriteRule ^(.*)about/$ https://yoshitake-portfolio.com/#about [NE,R=301,L]
+RewriteCond %{THE_REQUEST} ^.*/skills/ 
+RewriteRule ^(.*)skills/$ https://yoshitake-portfolio.com/#skills [NE,R=301,L]
+RewriteCond %{THE_REQUEST} ^.*/contact/ 
+RewriteRule ^(.*)contact/$ https://yoshitake-portfolio.com/#contact [NE,R=301,L]
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]     
+order deny,allow
+

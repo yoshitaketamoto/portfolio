@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+<head>
+	<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+	'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+	})(window,document,'script','dataLayer','GTM-PH3BW94');</script>
+	<!-- End Google Tag Manager -->
+<meta charset="UTF-8" />
+<title>お問い合わせ</title>
+<meta name="robots" content="noindex,nofollow" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0" />
+<link rel="icon" href="./img/icon.png">
+<link rel="stylesheet" href="./css1/reset.css" />
+<style>
+body {
+	color: #454545;
+	background: #f0f0f0;
+}
+</style>
+<link rel="stylesheet" href="./css1/mailform.css" />
+
+<!-- ご希望の日時選択ライブラリここから -->
+<link rel="stylesheet" href="./css1/jquery.datetimepicker.css" />
+<!-- ご希望の日時選択ライブラリここまで -->
+</head>
+<body>
+	<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PH3BW94"
+	height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+	<!-- End Google Tag Manager (noscript) -->
+
+
+<form action="./php/mailform.php" method="post" id="mail_form">
+	<dl>
+		
+		<dt>名前<span>Your Name</span></dt>
+		<dd class="required"><input type="text" id="name_1" name="name_1" value="" /> <input type="text" id="name_2" name="name_2" value="" /></dd>
+		
+		<dt>ふりがな<span>Name Reading</span></dt>
+		<dd><input type="text" id="read_1" name="read_1" value="" /> <input type="text" id="read_2" name="read_2" value="" /></dd>
+		
+		<dt>メールアドレス<span>Mail Address</span></dt>
+		<dd class="required"><input type="email" id="mail_address" name="mail_address" value="" /></dd>
+		
+		<dt>メールアドレス<br />(確認用)<span>Mail Address Confirm</span></dt>
+		<dd><input type="email" id="mail_address_confirm" name="mail_address_confirm" value="" /></dd>
+		
+		
+			
+		
+		<dt>お問い合わせの内容<span>Contents</span></dt>
+		<dd class="required"><textarea id="contents" name="contents" cols="40" rows="5"></textarea></dd>
+		
+	
+	</dl>
+	
+	<p id="form_submit"><input type="button" id="form_submit_button" value="送信する" /></p>
+</form>
+
+
+
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+<script src="./js/mailform-js.php"></script>
+
+
+<!-- フリガナ自動入力ライブラリここから -->
+<script src="./js/jquery.autoKana.js"></script>
+<script>
+	(function( $ ) {
+		$.fn.autoKana( '#name_1', '#read_1', {
+			katakana: false
+		});
+		$.fn.autoKana( '#name_2', '#read_2', {
+			katakana: false
+		});
+	})( jQuery );
+</script>
+<!-- フリガナ自動入力ライブラリここまで -->
+
+
+<!-- 住所自動入力ライブラリここから -->
+<script src="./js/ajaxzip3.js"></script>
+<!-- 住所自動入力ライブラリここまで -->
+
+
+<!-- ご希望の日時選択ライブラリここから -->
+<script src="./js/jquery.datetimepicker.js"></script>
+<script>
+	(function( $ ) {
+		$( 'input#schedule' ).datetimepicker({
+			lang: 'ja'
+		});
+	})( jQuery );
+</script>
+<!-- ご希望の日時選択ライブラリここまで -->
+
+
+</body>
+</html>

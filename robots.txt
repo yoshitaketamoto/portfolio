@@ -1,0 +1,4 @@
+User-Agent:*
+Disallow:
+Sitemap: https://yoshitake-portfolio.com/sitemap.xml
+Sitemap: https://yoshitake-portfolio.com/blog/sitemap.xml
